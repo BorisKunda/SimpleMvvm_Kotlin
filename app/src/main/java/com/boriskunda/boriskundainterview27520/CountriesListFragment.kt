@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -19,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_countries_list.*
  */
 class CountriesListFragment : Fragment(),CountryAdapter.OnRVItemClickListener {
 
-    private val sharedViewModel: SharedViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
     private lateinit var activityFromMain: Activity
     private lateinit var rv:RecyclerView
 

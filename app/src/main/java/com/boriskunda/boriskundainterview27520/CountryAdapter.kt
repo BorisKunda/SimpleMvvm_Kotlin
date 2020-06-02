@@ -31,26 +31,21 @@ class CountryAdapter(
 
     override fun onBindViewHolder(holder: VH, position: Int) {
 
-//        holder.itemView.setOnClickListener {
-//            //onRVItemClickListener.onRVItemClick(countriesList[position])
-//        }
-//
         val country = countriesList[position]
         holder.itemTv.text = country.name
         //glide implementation for SVG images
         GlideToVectorYou.justLoadImage(activity, Uri.parse(country.flagUrl), holder.itemIv)
+
+        holder.itemView.setOnClickListener {
+            onRVItemClickListener.onRVItemClick(countriesList[position])
+        }
+
     }
 
     class VH(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val itemTv: TextView = itemView.findViewById(R.id.item_tv)
         val itemIv: ImageView = itemView.findViewById(R.id.item_iv)
-
-        init {
-            itemView.setOnClickListener {
-
-            }
-        }
 
     }
 
