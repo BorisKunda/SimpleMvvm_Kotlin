@@ -1,32 +1,27 @@
 package com.boriskunda.boriskundainterview27520
 
-import android.app.Activity
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_countries_list.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class CountriesListFragment : Fragment(),CountryAdapter.OnRVItemClickListener {
+class CountriesListFragment : Fragment(), CountryAdapter.OnRVItemClickListener {
 
-    private val sharedViewModel: SharedViewModel by activityViewModels()
-    private lateinit var activityFromMain: Activity
-    private lateinit var rv:RecyclerView
+    private val sharedViewModel: SharedViewModel by activityViewModels()//access ViewModel of activity,which fragment associates with
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedViewModel.loadCountriesList()
+
     }
 
     override fun onCreateView(
@@ -40,18 +35,13 @@ class CountriesListFragment : Fragment(),CountryAdapter.OnRVItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val countryAdapter = CountryAdapter(activityFromMain, this)
+        val countryAdapter = CountryAdapter(this)
 
-        rv = view.findViewById(R.id.countries_rv)
-
-        rv.apply {
-            layoutManager = LinearLayoutManager(activityFromMain)
+        countries_rv.apply {
+            layoutManager = LinearLayoutManager(context)
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
             adapter = countryAdapter
         }
-
-
-
 
         sharedViewModel.countriesListLd.observe(viewLifecycleOwner,
             Observer {
@@ -62,14 +52,15 @@ class CountriesListFragment : Fragment(),CountryAdapter.OnRVItemClickListener {
             })
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        activityFromMain = (context as MainActivity)
+    override fun onRVItemClick(country: Country) {
+
+        sharedViewModel.apply {
+            setCurrentCountry(country)
+            openDetailsScreen()
+        }
+
     }
 
-    override fun onRVItemClick(country: Country) {
-       sharedViewModel.openDetailsScreen()
-    }
 
 
 }

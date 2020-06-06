@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container_fr, CountriesListFragment()).commit()
 
-        sharedViewModel.openDetailsScreen.observe(this, Observer {
+        sharedViewModel.openDetailsScreenLd.observe(this, Observer {
             supportFragmentManager.beginTransaction().replace(R.id.container_fr, DetailsFragment())
                 .addToBackStack(null).commit()
         })

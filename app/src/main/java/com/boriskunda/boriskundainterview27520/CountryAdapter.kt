@@ -12,7 +12,6 @@ import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
 import java.util.*
 
 class CountryAdapter(
-    private val activity: Activity,
     private val onRVItemClickListener: OnRVItemClickListener
 ) :
     RecyclerView.Adapter<CountryAdapter.VH>() {
@@ -33,8 +32,13 @@ class CountryAdapter(
 
         val country = countriesList[position]
         holder.itemTv.text = country.name
+
         //glide implementation for SVG images
-        GlideToVectorYou.justLoadImage(activity, Uri.parse(country.flagUrl), holder.itemIv)
+        GlideToVectorYou.justLoadImage(
+            holder.itemIv.context as Activity,
+            Uri.parse(country.flagUrl),
+            holder.itemIv
+        )
 
         holder.itemView.setOnClickListener {
             onRVItemClickListener.onRVItemClick(countriesList[position])

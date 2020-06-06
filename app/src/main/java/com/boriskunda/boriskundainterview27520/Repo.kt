@@ -8,7 +8,8 @@ import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
 import com.google.gson.Gson
 
-object Repo {
+class Repo private constructor() {
+
 
     var countriesListMld: MutableLiveData<List<Country>> = MutableLiveData()
 
@@ -29,6 +30,15 @@ object Repo {
 
             .let { Volley.newRequestQueue(application).add(it) }
 
+    }
+
+    companion object {
+        val instance: Repo by lazy { Repo() }
+        /**
+        The by lazy{}indicates it will be computed on the first access only.
+        The evaluation of lazy properties is synchronized, the value is computed only in one thread,
+        and all threads will see the same value.
+         */
     }
 
 }
