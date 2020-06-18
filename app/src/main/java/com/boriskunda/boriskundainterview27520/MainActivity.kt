@@ -4,21 +4,26 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
+
 
 class MainActivity : AppCompatActivity() {
 
     private val sharedViewModel: SharedViewModel by viewModels()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container_fr, CountriesListFragment()).commit()
-
         sharedViewModel.openDetailsScreenLd.observe(this, Observer {
-            supportFragmentManager.beginTransaction().replace(R.id.container_fr, DetailsFragment())
-                .addToBackStack(null).commit()
+
+            Navigation.findNavController(this, R.id.nav_host_fragment).apply {
+                navigate(R.id.action_countriesListFragment_to_detailsFragment)
+            }
+
+            // TODO: 6/18/2020 "make proper animations"
+
         })
 
     }
