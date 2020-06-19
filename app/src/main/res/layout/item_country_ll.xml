@@ -1,23 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="10dp"
-    android:orientation="horizontal">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/item_iv"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/ic_pic_place_holder" />
+    <data>
+        <variable
+            name="country"
+            type="com.boriskunda.boriskundainterview27520.Country" />
 
-    <TextView
-        android:layout_marginStart="15dp"
-        android:layout_gravity="center"
-        tools:text="Abasdbasd"
-        android:id="@+id/item_tv"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content" />
+        <variable
+            name="rvItemClickListener"
+            type="com.boriskunda.boriskundainterview27520.CountryAdapter.OnRVItemClickListener" />
 
-</LinearLayout>
+    </data>
+
+    <LinearLayout
+        android:onClick="@{() -> rvItemClickListener.onRVItemClick(country)}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/item_iv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_pic_place_holder"
+            app:loadImage="@{country.flagUrl}" />
+
+        <TextView
+            android:id="@+id/item_tv"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:text="@{country.name}"
+            tools:text="Abasdbasd" />
+
+    </LinearLayout>
+</layout>
