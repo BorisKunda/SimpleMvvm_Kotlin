@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.hide()
+
         sharedViewModel.openDetailsScreenLd.observe(this, Observer {
 
             Navigation.findNavController(this, R.id.nav_host_fragment).apply {
