@@ -46,7 +46,7 @@ class DetailsFragment : Fragment() {
             regionTv.text = it.region
 
             //glide implementation for SVG images
-            GlideToVectorYou.justLoadImage(context as Activity, Uri.parse(it.flagUrl), flagIv)
+          //  GlideToVectorYou.justLoadImage(context as Activity, Uri.parse(it.flagUrl), flagIv)
 
         })
 

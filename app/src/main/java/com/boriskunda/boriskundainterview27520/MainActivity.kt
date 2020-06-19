@@ -22,8 +22,6 @@ class MainActivity : AppCompatActivity() {
                 navigate(R.id.action_countriesListFragment_to_detailsFragment)
             }
 
-            // TODO: 6/18/2020 "make proper animations"
-
         })
 
     }

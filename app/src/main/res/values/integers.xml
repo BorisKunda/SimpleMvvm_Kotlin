@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="spd3">400</integer>
+    <integer name="spd2">300</integer>
+    <integer name="spd1">200</integer>
+
+</resources>

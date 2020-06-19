@@ -34,11 +34,7 @@ class CountryAdapter(
         holder.itemTv.text = country.name
 
         //glide implementation for SVG images
-        GlideToVectorYou.justLoadImage(
-            holder.itemIv.context as Activity,
-            Uri.parse(country.flagUrl),
-            holder.itemIv
-        )
+//        GlideToVectorYou.justLoadImage(holder.itemIv.context as Activity, Uri.parse(country.flagUrl), holder.itemIv)
 
         holder.itemView.setOnClickListener {
             onRVItemClickListener.onRVItemClick(countriesList[position])
