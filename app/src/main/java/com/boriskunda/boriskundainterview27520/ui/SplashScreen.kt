@@ -6,7 +6,6 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.boriskunda.boriskundainterview27520.R
 import com.boriskunda.boriskundainterview27520.utils.SPLASH_DURATION
-import com.boriskunda.boriskundainterview27520.utils.setStatusBarColor
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +13,6 @@ class SplashScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splash_screen)
 
         supportActionBar?.hide()
-        setStatusBarColor(window, resources)
 
         Handler().postDelayed({
 

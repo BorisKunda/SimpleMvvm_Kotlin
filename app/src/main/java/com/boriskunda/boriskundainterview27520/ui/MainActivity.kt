@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.boriskunda.boriskundainterview27520.R
-import com.boriskunda.boriskundainterview27520.utils.setStatusBarColor
 import com.boriskunda.boriskundainterview27520.viewmodel.SharedViewModel
 
 
@@ -20,8 +19,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         supportActionBar?.hide()
-
-        setStatusBarColor(window, resources)
 
         sharedViewModel.openDetailsScreenLd.observe(this, Observer {
 
