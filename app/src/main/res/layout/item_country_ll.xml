@@ -22,9 +22,11 @@
         android:padding="10dp">
 
         <ImageView
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
             android:id="@+id/item_iv"
             android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:src="@drawable/ic_pic_place_holder"
             app:loadImage="@{country.flagUrl}" />
 
