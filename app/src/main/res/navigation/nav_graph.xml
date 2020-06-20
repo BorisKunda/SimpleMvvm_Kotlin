@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/countriesListFragment_dest"
-        android:name="com.boriskunda.boriskundainterview27520.CountriesListFragment"
+        android:name="com.boriskunda.boriskundainterview27520.ui.CountriesListFragment"
         android:label="CountriesListFragment" >
         <action
             android:id="@+id/action_countriesListFragment_to_detailsFragment"
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment_dest"
-        android:name="com.boriskunda.boriskundainterview27520.DetailsFragment"
+        android:name="com.boriskunda.boriskundainterview27520.ui.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" />
 </navigation>

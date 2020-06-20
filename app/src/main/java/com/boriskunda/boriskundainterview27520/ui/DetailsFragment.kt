@@ -1,4 +1,4 @@
-package com.boriskunda.boriskundainterview27520
+package com.boriskunda.boriskundainterview27520.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.boriskunda.boriskundainterview27520.R
 import com.boriskunda.boriskundainterview27520.databinding.FragmentDetailsBinding
+import com.boriskunda.boriskundainterview27520.viewmodel.SharedViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -22,7 +24,8 @@ class DetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_details, container, false)
 
         binding.apply {
 

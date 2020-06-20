@@ -6,6 +6,8 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
+import com.boriskunda.boriskundainterview27520.model.Country
+import com.boriskunda.boriskundainterview27520.utils.GET_ALL_COUNTRIES_URL
 import com.google.gson.Gson
 
 class Repo private constructor() {

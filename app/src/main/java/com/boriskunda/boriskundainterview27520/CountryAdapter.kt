@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.boriskunda.boriskundainterview27520.databinding.ItemCountryLlBinding
+import com.boriskunda.boriskundainterview27520.model.Country
 import java.util.*
 
 class CountryAdapter(

@@ -1,16 +1,20 @@
-package com.boriskunda.boriskundainterview27520
+package com.boriskunda.boriskundainterview27520.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
+import com.boriskunda.boriskundainterview27520.model.Country
+import com.boriskunda.boriskundainterview27520.Repo
+import com.boriskunda.boriskundainterview27520.utils.SingleLiveEvent
 
 class SharedViewModel(application: Application) : AndroidViewModel(application) {
 
     private val openDetailsScreenSld: SingleLiveEvent<Boolean> = SingleLiveEvent()
     val openDetailsScreenLd: LiveData<Boolean> = openDetailsScreenSld
     private val selectedCountryMld: MutableLiveData<Country> = MutableLiveData()
-    var selectedCountryLd: LiveData<Country> = selectedCountryMld
+    val selectedCountryLd: LiveData<Country> = selectedCountryMld
     private val repo: Repo = Repo.instance
     val countriesListLd: LiveData<List<Country>> = repo.countriesListMld
 

@@ -1,4 +1,4 @@
-package com.boriskunda.boriskundainterview27520;
+package com.boriskunda.boriskundainterview27520.utils;
 
 
 /*

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="country"
-            type="com.boriskunda.boriskundainterview27520.Country" />
+            type="com.boriskunda.boriskundainterview27520.model.Country" />
 
         <variable
             name="rvItemClickListener"

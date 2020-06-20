@@ -1,4 +1,4 @@
-package com.boriskunda.boriskundainterview27520
+package com.boriskunda.boriskundainterview27520.model
 
 import com.google.gson.annotations.SerializedName
 

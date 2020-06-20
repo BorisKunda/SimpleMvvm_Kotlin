@@ -1,4 +1,4 @@
-package com.boriskunda.boriskundainterview27520
+package com.boriskunda.boriskundainterview27520.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,12 +9,17 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.boriskunda.boriskundainterview27520.model.Country
+import com.boriskunda.boriskundainterview27520.CountryAdapter
+import com.boriskunda.boriskundainterview27520.R
+import com.boriskunda.boriskundainterview27520.viewmodel.SharedViewModel
 import kotlinx.android.synthetic.main.fragment_countries_list.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class CountriesListFragment : Fragment(), CountryAdapter.OnRVItemClickListener {
+class CountriesListFragment : Fragment(),
+    CountryAdapter.OnRVItemClickListener {
 
     private val sharedViewModel: SharedViewModel by activityViewModels()//access ViewModel of activity,which fragment associates with
 
@@ -35,7 +40,8 @@ class CountriesListFragment : Fragment(), CountryAdapter.OnRVItemClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val countryAdapter = CountryAdapter(this)
+        val countryAdapter =
+            CountryAdapter(this)
 
         countries_rv.apply {
             layoutManager = LinearLayoutManager(context)

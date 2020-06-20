@@ -6,14 +6,14 @@
     <data>
         <variable
             name="vm"
-            type="com.boriskunda.boriskundainterview27520.SharedViewModel" />
+            type="com.boriskunda.boriskundainterview27520.viewmodel.SharedViewModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".DetailsFragment">
+        tools:context=".ui.DetailsFragment">
 
         <TextView
             android:id="@+id/name_tv"
