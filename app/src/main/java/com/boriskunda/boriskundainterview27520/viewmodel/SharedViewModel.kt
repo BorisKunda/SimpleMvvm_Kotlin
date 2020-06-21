@@ -15,6 +15,7 @@ class SharedViewModel(application: Application) : AndroidViewModel(application) 
     val openDetailsScreenLd: LiveData<Boolean> = openDetailsScreenSld
     private val selectedCountryMld: MutableLiveData<Country> = MutableLiveData()
     val selectedCountryLd: LiveData<Country> = selectedCountryMld
+    //private val transformedCountryLd
     private val repo: Repo = Repo.instance
     val countriesListLd: LiveData<List<Country>> = repo.countriesListMld
 

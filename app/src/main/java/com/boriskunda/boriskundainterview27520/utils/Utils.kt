@@ -14,8 +14,8 @@ import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYouListener
 
 
 const val GET_ALL_COUNTRIES_URL = "https://restcountries.eu/rest/v2/all"
-//const val SPLASH_DURATION: Long = 3000
-const val SPLASH_DURATION: Long = 0
+const val SPLASH_DURATION: Long = 3000
+//const val SPLASH_DURATION: Long = 0
 
 @BindingAdapter("loadImage")
 fun loadImage(view: ImageView, imageUrl: String?) {
